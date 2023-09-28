@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import rot.Cylinder;
+import rot.Translator;
 
 
 class Main {
@@ -39,19 +39,21 @@ class Main {
 				System.out.println("  Not a valid number");
 			}
 		}
+		Translator translation = new Translator(rot);
 		
 		if (mode.equals("e")) {
 			System.out.println("Enter the text for encryption");
 			text = scanner.nextLine();
+			System.out.println(translation.encryptText(text));
 		} else {
-			System.out.println("Enter the text for encryption");
+			System.out.println("Not supported yet");
 			text = scanner.nextLine();
 		}
 		
 		
 		
-		Cylinder baseCylinder = new Cylinder(rot);
-		System.out.println(baseCylinder.readCylinder());
+		
+		
 		
 	}
 }

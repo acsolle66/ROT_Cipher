@@ -3,11 +3,6 @@ package rot;
 import java.util.LinkedList;
 import rot.utils.Alphabet;
 
-/*
- *@author	Attila Csölle 
- *
- */
-
 public class Cylinder {
 	private LinkedList<Character> cylinderChars = new LinkedList<>();
 	

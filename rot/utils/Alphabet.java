@@ -1,5 +1,5 @@
 package rot.utils;
-
+ 
 public class Alphabet {
 	public static char[] ABC = generateABC();
 	

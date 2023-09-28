@@ -50,6 +50,9 @@ class Main {
 			text = scanner.nextLine();
 			System.out.println(translation.decryptText(text));
 		}
+		
+		System.out.println("Press any key to EXIT");
+		String exit = scanner.nextLine();
 
 	}
 }

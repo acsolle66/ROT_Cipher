@@ -34,7 +34,21 @@ public class Translator {
 	}
 	
 	public String decryptText(String text) {
-		return text;
+		char[] letters = text.toLowerCase().toCharArray();
+		int index = 0;
+		int end = letters.length;
+		StringBuilder shiftedText = new StringBuilder();
+		
+		while (index < end) {
+			int baseCharIndex = shiftedChars.indexOf(letters[index]);
+			char shiftedChar;
+			if (baseCharIndex >= 0) {
+				shiftedChar = baseChars.get(baseCharIndex);
+				shiftedText.append(shiftedChar);
+			}	
+			index ++;
+		}
+		return shiftedText.toString();
 	}
 		
 }

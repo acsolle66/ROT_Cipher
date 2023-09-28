@@ -46,14 +46,10 @@ class Main {
 			text = scanner.nextLine();
 			System.out.println(translation.encryptText(text));
 		} else {
-			System.out.println("Not supported yet");
+			System.out.println("Enter the text for decryption");
 			text = scanner.nextLine();
+			System.out.println(translation.decryptText(text));
 		}
-		
-		
-		
-		
-		
-		
+
 	}
 }

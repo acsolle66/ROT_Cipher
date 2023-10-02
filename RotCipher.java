@@ -1,17 +1,6 @@
 import java.util.Scanner;
 import rot.cipher.Cipher;
 
-    /**
-	  * ROT CIPHER
-	  * A simple script to encrypt or decrypt text with ROT cipher
-	  * ROT cipher is a simple character substitution based on shift/rotation
-	  * of N letters in the alphabet. One letter is replaced by another that is
-	  * located N letters further in the alphabet. For more info see the link provided in the README.md
-	  * The program promts the user for cipher mode, number of shifts and the text to cipher.
-	  * @author		Attila Csölle
-	  * @version 	1.0
-      * @since		09.29.2023
-	 **/
 public class RotCipher {
 	
 	public static void main(String[] args) {

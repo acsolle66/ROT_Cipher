@@ -2,6 +2,17 @@ package rot.cipher;
 import java.lang.StringBuilder;
 import java.util.LinkedList;
 
+abstract class Cipher {
+	private final CharacterMap characaterMap;
+
+	public Cipher(int rot) {
+	characterMap = new CharacterMap(rot);
+	}
+
+	abstract public String translateText() {
+	}
+}
+
 public class Cipher {
 	private Cylinder baseCylinder;
 	private LinkedList<Character> baseChars;
@@ -40,4 +51,20 @@ public class Cipher {
 		}
 		return shiftedText.toString();
 	}		
+}
+
+public class Encrypt extends Cipher{
+	@Override
+	public String translateText() {
+		char[]
+	}
+}
+
+public class Decrypt extends Cipher{
+	@Override
+	public String translateText() {
+
+	}
+
+
 }

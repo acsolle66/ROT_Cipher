@@ -1,6 +1,6 @@
-package rot.cipher;
+package utils;
 
-class EnglishAlphabetGenerator {
+public class EnglishAlphabetGenerator {
   private final int LETTER_A;
   private final int LETTER_Z;
 
@@ -9,7 +9,7 @@ class EnglishAlphabetGenerator {
     LETTER_Z = 122;
   }
 
-  char[] getABC() {
+  public char[] getABC() {
     char[] ABC = new char[26];
     int start = LETTER_A;
     int end = LETTER_Z;

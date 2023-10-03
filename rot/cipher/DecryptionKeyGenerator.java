@@ -1,21 +1,19 @@
 package rot.cipher;
 
-public class DecryptionKeyGenerator extends CipherKeyGenerator{
-    @Override
-    public void generateKeyMap(int shift) {
-        EnglishAlphabetGenerator ABCGenerator = new EnglishAlphabetGenerator();
-        char[] charSet = ABCGenerator.getABC();
-        int charSetLength = charSet.length;
-        int adjustedShift = super.adjustShiftToCharsetLength(shift, charSetLength);
-        int keyIndex = 0;
-        int valueIndex = adjustedShift;
-        while (keyIndex < charSetLength) {
-            if (valueIndex == charSetLength) {
-                valueIndex = 0;
-            }
-            this.CipherKeyMap.put(charSet[valueIndex], charSet[keyIndex]);
-            keyIndex++;
-            valueIndex++;
-            }
+class DecryptionKeyGenerator extends CipherKeyGenerator {
+  @Override
+  void generateKey(int shift, char[] charSet) {
+    int charSetLength = charSet.length;
+    int keyIndex = 0;
+    int valueIndex = super.TransformShiftToCharsetRange(shift, charSetLength);
+
+    while (keyIndex < charSetLength) {
+      if (valueIndex == charSetLength) {
+        valueIndex = 0;
+      }
+      this.CipherKey.put(charSet[valueIndex], charSet[keyIndex]);
+      keyIndex++;
+      valueIndex++;
     }
+  }
 }

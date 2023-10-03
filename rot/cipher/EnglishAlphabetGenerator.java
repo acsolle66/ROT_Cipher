@@ -4,7 +4,7 @@ class EnglishAlphabetGenerator {
   private final int LETTER_A;
   private final int LETTER_Z;
 
-  EnglishAlphabetGenerator() {
+  public EnglishAlphabetGenerator() {
     LETTER_A = 97;
     LETTER_Z = 122;
   }

@@ -3,27 +3,23 @@ package rot.cipher;
 import java.util.HashMap;
 
 abstract class CipherKeyGenerator {
-  protected HashMap<Character, Character> CipherKeyMap;
+  protected HashMap<Character, Character> CipherKey;
 
-  public CipherKeyGenerator () {
-  CipherKeyMap = new HashMap<>();
+  CipherKeyGenerator() {
+    CipherKey = new HashMap<>();
   }
 
-  abstract void generateKeyMap(int shift);
+  abstract void generateKey(int shift, char[] charSet);
 
-  protected int adjustShiftToCharsetLength(int shift, int charSetLength) {
+  protected int TransformShiftToCharsetRange(int shift, int charSetLength) {
     int adjustedShift = shift;
-    while(adjustedShift >= charSetLength) {
+    while (adjustedShift >= charSetLength) {
       adjustedShift -= charSetLength;
     }
     return adjustedShift;
   }
 
-  public HashMap<Character, Character> getCipherKey() {
-    return this.CipherKeyMap;
+  HashMap<Character, Character> getKey() {
+    return this.CipherKey;
   }
-
 }
-
-
-

@@ -3,10 +3,11 @@ package algorithms;
 import keys.*;
 import utils.EnglishAlphabetGenerator;
 import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Cipher {
   protected char[] charSet;
-  protected HashMap<Character, Character> characterMap;
+  protected Map<Character, Character> characterMap;
   protected StringBuilder cipherText;
 
   public Cipher() {

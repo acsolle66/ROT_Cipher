@@ -5,15 +5,12 @@ public class DecryptionKeyGenerator extends CipherKeyGenerator {
   public void generateKey(int shift, char[] charSet) {
     int charSetLength = charSet.length;
     int keyIndex = 0;
-    int valueIndex = super.reduceShiftToCharsetRange(shift, charSetLength);
+    int valueIndex;
 
     while (keyIndex < charSetLength) {
-      if (valueIndex == charSetLength) {
-        valueIndex = 0;
-      }
+      valueIndex = (keyIndex + shift) % charSetLength;
       this.cipherKey.put(charSet[valueIndex], charSet[keyIndex]);
       keyIndex++;
-      valueIndex++;
     }
   }
 }

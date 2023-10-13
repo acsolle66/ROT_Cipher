@@ -1,16 +1,15 @@
 package keys;
 
-public class EncryptionKeyGenerator extends CipherKeyGenerator {
-  @Override
-  public void generateKey(int shift, char[] charSet) {
-    int charSetLength = charSet.length;
-    int keyIndex = 0;
-    int valueIndex;
+import java.util.Arrays;
+import java.util.Map;
 
-    while (keyIndex < charSetLength) {
-      valueIndex = (keyIndex + shift) % charSetLength;
-      this.cipherKey.put(charSet[keyIndex], charSet[valueIndex]);
-      keyIndex++;
-    }
+import static java.util.stream.Collectors.toMap;
+
+public class EncryptionKeyGenerator extends CipherKeyGenerator {
+
+  @Override
+  public Map<Character, Character> generateCipherKey(int shift, Character[] charSet) {
+    return Arrays.stream(charSet)
+        .collect(toMap(a -> a, a -> (char) ((((a - 97) + shift) % charSet.length) + 97)));
   }
 }

@@ -9,8 +9,8 @@ public class EnglishAlphabetGenerator {
     LETTER_Z = 122;
   }
 
-  public char[] getABC() {
-    char[] ABC = new char[26];
+  public Character[] generateABC() {
+    Character[] ABC = new Character[26];
     int start = LETTER_A;
     int end = LETTER_Z;
     int charIndex = 0;
